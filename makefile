@@ -7,7 +7,7 @@ EXT := .exe
 endif
 
 .DEFAULT_GOAL := build
-.PHONY: build run fmt fmt-check vet clean
+.PHONY: build run test fmt fmt-check vet clean
 
 build:
 	@mkdir -p $(BIN_DIR)
@@ -27,3 +27,6 @@ vet:
 
 clean:
 	@rm -rf $(BIN_DIR)
+
+test:
+	@go test ./...
